@@ -1,0 +1,93 @@
+/* ========================================
+   CÀI ĐẶT NỀN CHUNG
+   ======================================== */
+.root {
+    -fx-background-color: #f8f9fa; /* Màu nền xám nhạt, hiện đại và dịu mắt */
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ========================================
+   TIÊU ĐỀ
+   ======================================== */
+.header-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Màu xanh đen đậm */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1); /* Đổ bóng nhẹ cho chữ */
+}
+
+/* ========================================
+   CÁC Ô NHẬP LIỆU (TEXTFIELD & CHECKBOX)
+   ======================================== */
+.text-field {
+    -fx-padding: 8px 12px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
+}
+
+/* Hiệu ứng khi người dùng click con trỏ chuột vào ô nhập liệu */
+.text-field:focused {
+    -fx-border-color: #3498db; /* Viền chuyển màu xanh dương */
+    -fx-border-width: 2px;
+    -fx-background-color: #ffffff;
+}
+
+.check-box {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+    -fx-cursor: hand;
+}
+
+/* ========================================
+   NÚT BẤM (BUTTONS)
+   ======================================== */
+.button {
+    -fx-padding: 10px 22px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-width: 0;
+}
+
+/* Nút Submit (Dùng cho cả Save và Load) */
+.btn-submit {
+    -fx-background-color: #27ae60; /* Màu xanh lá chuẩn */
+}
+.btn-submit:hover {
+    -fx-background-color: #2ecc71; /* Sáng hơn một chút khi di chuột qua */
+}
+.btn-submit:pressed {
+    -fx-background-color: #1e8449; /* Đậm hơn khi click xuống */
+}
+
+/* Nút Clear (Làm mới) */
+.btn-clear {
+    -fx-background-color: #e74c3c; /* Màu đỏ */
+}
+.btn-clear:hover {
+    -fx-background-color: #ec7063;
+}
+.btn-clear:pressed {
+    -fx-background-color: #c0392b;
+}
+
+/* ========================================
+   KHU VỰC THÔNG BÁO (MESSAGES)
+   ======================================== */
+.message-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 0 0 0;
+}
+
+/* Vòng xoay tải (Progress Indicator) */
+.progress-indicator {
+    -fx-progress-color: #3498db; /* Màu xanh dương cho vòng xoay */
+}

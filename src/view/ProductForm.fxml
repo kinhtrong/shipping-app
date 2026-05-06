@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Bố cục gốc VBox, nhúng CSS và khai báo Controller -->
+<VBox alignment="CENTER" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProductController">
+    
+    <!-- Căn lề cho toàn bộ Form -->
+    <padding>
+        <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+    </padding>
+
+    <!-- Tiêu đề chính -->
+    <Label styleClass="header-label" text="QUẢN LÝ KHO SẢN PHẨM" />
+
+    <!-- Khu vực nhập liệu (GridPane) -->
+    <GridPane alignment="CENTER" hgap="15.0" vgap="15.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="110.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="220.0" />
+        </columnConstraints>
+
+        <!-- Mã sản phẩm (Row 0) -->
+        <Label text="Mã sản phẩm:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtId" promptText="Nhập mã SP (Bắt buộc để Lưu/Tải)..." GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <!-- Tên sản phẩm (Row 1) -->
+        <Label text="Tên sản phẩm:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtName" promptText="Nhập tên SP..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- Giá sản phẩm (Row 2) -->
+        <Label text="Giá sản phẩm:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="txtPrice" promptText="Nhập giá (VNĐ)..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <!-- Tình trạng (Row 3) -->
+        <Label text="Tình trạng:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="chkInStock" text="Còn hàng" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </GridPane>
+
+    <!-- Khu vực các nút hành động (HBox) -->
+    <HBox alignment="CENTER" spacing="15.0">
+        <Button onAction="#handleSubmit" styleClass="btn-submit" text="Save (Lưu)" />
+        <Button onAction="#handleLoad" styleClass="btn-submit" style="-fx-background-color: #3498db;" text="Load (Tải)" />
+        <Button onAction="#handleClear" styleClass="btn-clear" text="Clear" />
+    </HBox>
+
+    <!-- Vòng xoay tiến trình (Mặc định được ẩn đi) -->
+    <ProgressIndicator fx:id="progressIndicator" prefHeight="30.0" prefWidth="30.0" visible="false" />
+
+    <!-- Nhãn hiển thị thông báo trạng thái -->
+    <Label fx:id="lblMessage" styleClass="message-label" />
+
+</VBox>
